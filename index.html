@@ -62,6 +62,7 @@
       <a href="#problema">El problema</a>
       <a href="#aplicaciones">Aplicaciones</a>
       <a href="#ventajas">El equipo</a>
+      <a href="#tabla-cargas">Tabla de cargas</a>
       <a href="#proceso">Cómo evaluamos</a>
     </nav>
     <div class="header-cta">
@@ -82,6 +83,7 @@
     <a href="#problema">El problema</a>
     <a href="#aplicaciones">Aplicaciones</a>
     <a href="#ventajas">El equipo</a>
+    <a href="#tabla-cargas">Tabla de cargas</a>
     <a href="#proceso">Cómo evaluamos</a>
     <a href="#contacto">Contacto</a>
     <a href="tel:+50687871111">Llamar · (506) 8787-1111</a>
@@ -123,83 +125,87 @@
       <p class="hero-phone"><span class="mono">TEL</span><b>(506) 8787-1111</b></p>
     </div>
 
-    <!-- SIGNATURE: technical schematic -->
-    <div class="schematic reveal" aria-label="Esquema técnico de la grúa araña con su envolvente de alcance">
+    <!-- SIGNATURE: crane illustration with real-data pins -->
+    <div class="schematic reveal" aria-label="Esquema de la grúa araña con capacidades reales de la tabla de cargas">
       <div class="schematic-head">
-        <span class="lbl">Envolvente de alcance</span>
-        <span class="lbl">esc. referencial</span>
+        <span class="lbl">Grúa araña CC</span>
+        <span class="lbl">vista esquemática</span>
       </div>
-      <svg viewBox="0 0 640 520" role="img" aria-hidden="true">
-        <defs>
-          <marker id="arw" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L8 4.5 L0 9 Z" fill="#2FD46E"/></marker>
-          <marker id="arws" markerWidth="9" markerHeight="9" refX="1" refY="4.5" orient="auto"><path d="M8 0 L0 4.5 L8 9 Z" fill="#2FD46E"/></marker>
-        </defs>
-        <!-- grid -->
-        <g stroke="rgba(255,255,255,.06)" stroke-width="1">
-          <path d="M40 40 V470 M160 40 V470 M280 40 V470 M400 40 V470 M520 40 V470"/>
-          <path d="M40 100 H600 M40 180 H600 M40 260 H600 M40 340 H600 M40 420 H600"/>
-        </g>
-        <!-- ground -->
-        <line x1="30" y1="440" x2="610" y2="440" stroke="#3f5a49" stroke-width="2"/>
-        <g stroke="#2a4436" stroke-width="1.5">
-          <path d="M40 440 l-8 10 M90 440 l-8 10 M140 440 l-8 10 M190 440 l-8 10 M240 440 l-8 10 M290 440 l-8 10 M340 440 l-8 10 M390 440 l-8 10 M440 440 l-8 10 M490 440 l-8 10 M540 440 l-8 10 M590 440 l-8 10"/>
-        </g>
 
-        <!-- reach envelope arc (pivot at 200,372) -->
-        <path d="M200 120 A252 252 0 0 1 452 372" fill="none" stroke="#2FD46E" stroke-width="1.6" stroke-dasharray="5 7" opacity=".85"/>
-        <path d="M200 372 L200 120" stroke="rgba(47,212,110,.35)" stroke-width="1.2" stroke-dasharray="3 5"/>
-        <path d="M200 372 L452 372" stroke="rgba(47,212,110,.35)" stroke-width="1.2" stroke-dasharray="3 5"/>
+      <div class="crane-visual">
+        <svg viewBox="0 0 640 520" role="img" aria-hidden="true">
+          <!-- grid -->
+          <g stroke="rgba(255,255,255,.06)" stroke-width="1">
+            <path d="M40 40 V470 M160 40 V470 M280 40 V470 M400 40 V470 M520 40 V470"/>
+            <path d="M40 100 H600 M40 180 H600 M40 260 H600 M40 340 H600 M40 420 H600"/>
+          </g>
+          <!-- ground -->
+          <line x1="30" y1="440" x2="610" y2="440" stroke="#3f5a49" stroke-width="2"/>
+          <g stroke="#2a4436" stroke-width="1.5">
+            <path d="M40 440 l-8 10 M90 440 l-8 10 M140 440 l-8 10 M190 440 l-8 10 M240 440 l-8 10 M290 440 l-8 10 M340 440 l-8 10 M390 440 l-8 10 M440 440 l-8 10 M490 440 l-8 10 M540 440 l-8 10 M590 440 l-8 10"/>
+          </g>
 
-        <!-- outriggers (spider stance) -->
-        <g stroke="#cfe6d8" stroke-width="4" stroke-linecap="round">
-          <path d="M200 388 L96 438"/><path d="M200 388 L150 438"/>
-          <path d="M200 388 L300 438"/><path d="M200 388 L372 438"/>
-        </g>
-        <g fill="#17A64E">
-          <rect x="84" y="434" width="26" height="9" rx="2"/><rect x="138" y="434" width="26" height="9" rx="2"/>
-          <rect x="288" y="434" width="26" height="9" rx="2"/><rect x="360" y="434" width="26" height="9" rx="2"/>
-        </g>
+          <!-- reach envelope arc (pivot at 200,372) -->
+          <path d="M200 120 A252 252 0 0 1 452 372" fill="none" stroke="#2FD46E" stroke-width="1.6" stroke-dasharray="5 7" opacity=".85"/>
+          <path d="M200 372 L200 120" stroke="rgba(47,212,110,.35)" stroke-width="1.2" stroke-dasharray="3 5"/>
+          <path d="M200 372 L452 372" stroke="rgba(47,212,110,.35)" stroke-width="1.2" stroke-dasharray="3 5"/>
 
-        <!-- crawler base -->
-        <rect x="150" y="392" width="118" height="30" rx="12" fill="#123a24" stroke="#3f6b4c" stroke-width="1.6"/>
-        <g fill="#2a5138"><circle cx="166" cy="422" r="7"/><circle cx="186" cy="425" r="7"/><circle cx="209" cy="425" r="7"/><circle cx="232" cy="425" r="7"/><circle cx="252" cy="422" r="7"/></g>
-        <!-- turret / slew -->
-        <rect x="184" y="360" width="48" height="34" rx="5" fill="#17512f" stroke="#3f6b4c" stroke-width="1.6"/>
-        <circle cx="200" cy="372" r="4.5" fill="#2FD46E"/>
-        <path d="M188 372 h24 M200 360 v24" stroke="#2FD46E" stroke-width="1"/>
+          <!-- outriggers (spider stance) -->
+          <g stroke="#cfe6d8" stroke-width="4" stroke-linecap="round">
+            <path d="M200 388 L96 438"/><path d="M200 388 L150 438"/>
+            <path d="M200 388 L300 438"/><path d="M200 388 L372 438"/>
+          </g>
+          <g fill="#17A64E">
+            <rect x="84" y="434" width="26" height="9" rx="2"/><rect x="138" y="434" width="26" height="9" rx="2"/>
+            <rect x="288" y="434" width="26" height="9" rx="2"/><rect x="360" y="434" width="26" height="9" rx="2"/>
+          </g>
 
-        <!-- boom (telescopic, rising to upper right) -->
-        <g stroke="#eaf5ee" stroke-width="12" stroke-linecap="round" fill="none">
-          <path d="M204 366 L322 250"/>
-        </g>
-        <g stroke="#bcd8c7" stroke-width="9" stroke-linecap="round" fill="none">
-          <path d="M312 260 L408 166"/>
-        </g>
-        <g stroke="#93b8a2" stroke-width="6.5" stroke-linecap="round" fill="none">
-          <path d="M400 174 L470 106"/>
-        </g>
-        <!-- boom pivot -->
-        <circle cx="204" cy="366" r="6" fill="#17512f" stroke="#eaf5ee" stroke-width="2"/>
-        <!-- hook line + load -->
-        <line x1="470" y1="106" x2="470" y2="176" stroke="#eaf5ee" stroke-width="2"/>
-        <path d="M466 176 q4 8 8 0" fill="none" stroke="#eaf5ee" stroke-width="2"/>
-        <rect x="454" y="184" width="34" height="24" rx="3" fill="#17A64E"/>
-        <text x="471" y="200" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="600" fill="#0A160E">CARGA</text>
+          <!-- crawler base -->
+          <rect x="150" y="392" width="118" height="30" rx="12" fill="#123a24" stroke="#3f6b4c" stroke-width="1.6"/>
+          <g fill="#2a5138"><circle cx="166" cy="422" r="7"/><circle cx="186" cy="425" r="7"/><circle cx="209" cy="425" r="7"/><circle cx="232" cy="425" r="7"/><circle cx="252" cy="422" r="7"/></g>
+          <!-- turret / slew -->
+          <rect x="184" y="360" width="48" height="34" rx="5" fill="#17512f" stroke="#3f6b4c" stroke-width="1.6"/>
+          <circle cx="200" cy="372" r="4.5" fill="#2FD46E"/>
+          <path d="M188 372 h24 M200 360 v24" stroke="#2FD46E" stroke-width="1"/>
 
-        <!-- dimension: height 18m -->
-        <line x1="556" y1="440" x2="556" y2="120" stroke="#2FD46E" stroke-width="1.4" marker-start="url(#arws)" marker-end="url(#arw)"/>
-        <rect x="520" y="262" width="72" height="34" rx="4" fill="#0B2E19" stroke="#2FD46E" stroke-width="1"/>
-        <text x="556" y="277" text-anchor="middle" font-family="'Archivo'" font-style="italic" font-weight="800" font-size="19" fill="#fff">18 m</text>
-        <text x="556" y="290" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="8.5" letter-spacing="1" fill="#7fb597">ALTURA MÁX</text>
+          <!-- boom (telescopic, rising to upper right) -->
+          <g stroke="#eaf5ee" stroke-width="12" stroke-linecap="round" fill="none">
+            <path d="M204 366 L322 250"/>
+          </g>
+          <g stroke="#bcd8c7" stroke-width="9" stroke-linecap="round" fill="none">
+            <path d="M312 260 L408 166"/>
+          </g>
+          <g stroke="#93b8a2" stroke-width="6.5" stroke-linecap="round" fill="none">
+            <path d="M400 174 L470 106"/>
+          </g>
+          <!-- boom pivot -->
+          <circle cx="204" cy="366" r="6" fill="#17512f" stroke="#eaf5ee" stroke-width="2"/>
+          <!-- hook line + load -->
+          <line x1="470" y1="106" x2="470" y2="176" stroke="#eaf5ee" stroke-width="2"/>
+          <path d="M466 176 q4 8 8 0" fill="none" stroke="#eaf5ee" stroke-width="2"/>
+          <rect x="454" y="184" width="34" height="24" rx="3" fill="#17A64E"/>
+          <text x="471" y="200" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="600" fill="#0A160E">CARGA</text>
 
-        <!-- capacity 8t callout -->
-        <rect x="52" y="372" width="112" height="42" rx="5" fill="#0B2E19" stroke="#2FD46E" stroke-width="1"/>
-        <text x="66" y="392" font-family="'Archivo'" font-style="italic" font-weight="850" font-size="24" fill="#2FD46E">8 t</text>
-        <text x="66" y="406" font-family="'IBM Plex Mono',monospace" font-size="8.5" letter-spacing="1" fill="#8fb9a0">CAPACIDAD MÁX</text>
+          <!-- model code -->
+          <text x="40" y="66" font-family="'IBM Plex Mono',monospace" font-size="11" letter-spacing="2" fill="rgba(255,255,255,.4)">CC · GRÚA ARAÑA · 8 t / 18 m</text>
+        </svg>
 
-        <!-- model code -->
-        <text x="40" y="66" font-family="'IBM Plex Mono',monospace" font-size="11" letter-spacing="2" fill="rgba(255,255,255,.4)">CC · GRÚA ARAÑA · 8 t / 18 m</text>
-      </svg>
+        <button type="button" class="crane-pin" style="left:31.9%;top:70.4%">
+          <span class="crane-pin-dot"></span>
+          <span class="crane-pin-label">8 t</span>
+          <span class="crane-pin-tip">8 t de capacidad a 0.4 m de radio, con la pluma corta.</span>
+        </button>
+        <button type="button" class="crane-pin crane-pin--below" style="left:73.4%;top:20.4%">
+          <span class="crane-pin-dot"></span>
+          <span class="crane-pin-label">~19 m</span>
+          <span class="crane-pin-tip">Hasta 18.9 m de altura, con 0.8 t a 1.5 m de radio y la pluma extendida.</span>
+        </button>
+        <button type="button" class="crane-pin" style="left:70.6%;top:71.5%">
+          <span class="crane-pin-dot"></span>
+          <span class="crane-pin-label">17.1 m</span>
+          <span class="crane-pin-tip">0.3 t al alcance máximo de 17.1 m, a nivel de piso.</span>
+        </button>
+      </div>
     </div>
   </div>
 </section>
@@ -313,6 +319,54 @@
           <text x="30" y="30" font-family="'IBM Plex Mono',monospace" font-size="10" letter-spacing="1.5" fill="#8A998F">CC · ACCESORIOS INTERCAMBIABLES</text>
         </svg>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TABLA DE CARGAS ================= -->
+<section class="section section-dark" id="tabla-cargas">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="marker">Tabla de cargas real</span>
+      <h2>Cuánto puede levantar, según el radio de trabajo</h2>
+      <p class="lead">Explore las 5 configuraciones de pluma del equipo y su capacidad exacta a cada radio y altura, tomadas de la tabla de cargas real de la grúa.</p>
+    </div>
+
+    <div class="schematic lc-standalone">
+      <div class="lc-legend" role="group" aria-label="Configuración de pluma, por alcance máximo">
+        <button type="button" class="lc-chip" data-curve="E">4.3 m</button>
+        <button type="button" class="lc-chip" data-curve="D">7.5 m</button>
+        <button type="button" class="lc-chip" data-curve="C">10.7 m</button>
+        <button type="button" class="lc-chip" data-curve="B">13.9 m</button>
+        <button type="button" class="lc-chip" data-curve="A">17.1 m</button>
+      </div>
+
+      <svg class="lc-svg" viewBox="0 0 640 440" role="img" aria-hidden="true">
+        <g class="lc-grid" stroke="rgba(255,255,255,.06)" stroke-width="1"></g>
+        <g class="lc-axis-labels"></g>
+        <line x1="60" y1="400" x2="610" y2="400" stroke="#3f5a49" stroke-width="2"/>
+
+        <!-- pivot glyph -->
+        <rect x="46" y="392" width="48" height="18" rx="6" fill="#123a24" stroke="#3f6b4c" stroke-width="1.4"/>
+        <circle cx="70" cy="400" r="4.5" fill="#2FD46E"/>
+
+        <g class="lc-curves"></g>
+
+        <line class="lc-marker-line" x1="70" y1="40" x2="70" y2="400" stroke="#2FD46E" stroke-width="1.4" stroke-dasharray="4 5"/>
+        <circle class="lc-marker-dot" cx="70" cy="400" r="6" fill="#2FD46E" stroke="#0A160E" stroke-width="2"/>
+      </svg>
+
+      <div class="lc-controls">
+        <input type="range" class="lc-slider" min="0" max="107" step="1" value="53" aria-label="Radio de trabajo, en metros">
+        <div class="lc-readout" aria-live="polite">
+          <span class="lc-readout-t">— t</span>
+          <span class="lc-readout-sep">·</span>
+          <span class="lc-readout-r">— m radio</span>
+          <span class="lc-readout-sep">·</span>
+          <span class="lc-readout-h">— m altura</span>
+        </div>
+      </div>
+      <p class="lc-note">Valores referenciales de la tabla de cargas del equipo. La capacidad real depende de la configuración, accesorios y condiciones del sitio; cada trabajo se evalúa previamente.</p>
     </div>
   </div>
 </section>

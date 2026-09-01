@@ -175,6 +175,78 @@ button{font-family:inherit}
 .schematic-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
 .schematic-head .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.66)}
 .schematic svg{width:100%;height:auto}
+
+/* crane illustration + data pins (hero) */
+.crane-visual{position:relative}
+.crane-pin{
+  position:absolute;transform:translate(-50%,-50%);
+  display:flex;align-items:center;gap:6px;
+  background:none;border:0;padding:0;margin:0;cursor:pointer;
+  font-family:var(--mono);
+}
+.crane-pin-dot{
+  width:10px;height:10px;border-radius:50%;flex:none;
+  background:var(--emerald-bright);
+  box-shadow:0 0 0 4px rgba(47,212,110,.18);
+  transition:box-shadow .15s ease;
+}
+.crane-pin:hover .crane-pin-dot,.crane-pin:focus .crane-pin-dot{box-shadow:0 0 0 6px rgba(47,212,110,.3)}
+.crane-pin-label{
+  font-size:11px;font-weight:700;letter-spacing:.03em;color:var(--white);
+  background:rgba(10,22,14,.72);border:1px solid var(--forest-line);
+  padding:4px 8px;border-radius:999px;white-space:nowrap;
+}
+.crane-pin-tip{
+  position:absolute;left:50%;bottom:calc(100% + 10px);
+  transform:translateX(-50%) translateY(4px);
+  width:210px;max-width:60vw;
+  background:#0B2E19;border:1px solid var(--emerald);border-radius:6px;
+  padding:10px 12px;font-family:var(--body);font-size:12.5px;line-height:1.45;color:rgba(255,255,255,.88);
+  text-align:left;white-space:normal;
+  opacity:0;pointer-events:none;
+  transition:opacity .16s ease,transform .16s ease;
+  box-shadow:0 8px 24px rgba(0,0,0,.35);
+  z-index:5;
+}
+.crane-pin--below .crane-pin-tip{bottom:auto;top:calc(100% + 10px);transform:translateX(-50%) translateY(-4px)}
+.crane-pin:hover .crane-pin-tip,.crane-pin:focus .crane-pin-tip,.crane-pin:focus-within .crane-pin-tip{
+  opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto;
+}
+@media (prefers-reduced-motion:reduce){.crane-pin-tip,.crane-pin-dot{transition:none}}
+
+/* load chart (interactive) */
+.lc-legend{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.lc-chip{
+  font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.05em;
+  padding:7px 12px;border-radius:999px;border:1.5px solid var(--forest-line);
+  background:transparent;color:rgba(255,255,255,.72);cursor:pointer;
+  transition:background .15s,border-color .15s,color .15s;
+}
+.lc-chip:hover{border-color:rgba(255,255,255,.5);color:#fff}
+.lc-chip.active{background:var(--emerald);border-color:var(--emerald);color:var(--ink)}
+
+.lc-svg{width:100%;height:auto;margin-top:2px}
+.lc-curve{stroke:var(--emerald);stroke-width:1.6;opacity:.32;transition:opacity .15s,stroke-width .15s}
+.lc-point{fill:var(--emerald);opacity:.32;transition:opacity .15s}
+.lc-curve-group.active .lc-curve{stroke:var(--emerald-bright);stroke-width:2.4;opacity:1}
+.lc-curve-group.active .lc-point{fill:var(--emerald-bright);opacity:1}
+.lc-marker-dot{transition:cx .12s ease,cy .12s ease}
+.lc-marker-line{transition:x1 .12s ease,x2 .12s ease}
+@media (prefers-reduced-motion:reduce){.lc-marker-dot,.lc-marker-line,.lc-chip,.lc-curve,.lc-point{transition:none}}
+
+.lc-controls{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.lc-slider{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:2px;background:var(--forest-line);outline:none;cursor:pointer}
+.lc-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:18px;height:18px;border-radius:50%;background:var(--emerald-bright);border:2px solid var(--ink);cursor:pointer}
+.lc-slider::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--emerald-bright);border:2px solid var(--ink);cursor:pointer}
+.lc-slider::-moz-range-track{background:var(--forest-line);height:4px;border-radius:2px}
+
+.lc-readout{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;font-family:var(--disp);font-style:italic;font-variation-settings:"wdth" 82,"wght" 800;font-size:22px;color:var(--white)}
+.lc-readout-t{color:var(--emerald-bright)}
+.lc-readout-r,.lc-readout-h{font-family:var(--mono);font-style:normal;font-variation-settings:normal;font-size:12px;letter-spacing:.05em;color:rgba(255,255,255,.7)}
+.lc-readout-sep{color:rgba(255,255,255,.3);font-family:var(--mono);font-size:12px}
+
+.lc-note{margin-top:12px;font-size:12px;line-height:1.5;color:rgba(255,255,255,.5)}
+.lc-standalone{max-width:720px;margin:32px auto 0}
 @media(min-width:1040px){
   .hero-grid{grid-template-columns:1.05fr .95fr;align-items:center;gap:48px}
 }
