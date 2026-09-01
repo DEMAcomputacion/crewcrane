@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Página no encontrada | Crewcrane</title>
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#0E3A20">
+<link rel="icon" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0A160E;--forest:#0E3A20;--forest-700:#0B2E19;--forest-line:rgba(255,255,255,.10);
+  --emerald:#17A64E;--emerald-bright:#2FD46E;
+  --disp:"Archivo",system-ui,sans-serif;--body:"IBM Plex Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",monospace;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+  font-family:var(--body);color:#fff;text-align:center;padding:32px;
+  background:
+    radial-gradient(120% 90% at 80% 0%,rgba(23,166,78,.16),transparent 55%),
+    linear-gradient(180deg,var(--forest),var(--forest-700));
+}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;
+  background-image:repeating-linear-gradient(-45deg,transparent 0 22px,rgba(255,255,255,.02) 22px 23px);}
+.box{position:relative;z-index:2;max-width:640px}
+.tag{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--emerald-bright);display:inline-flex;align-items:center;gap:10px}
+.tag::before{content:"";width:26px;height:2px;background:var(--emerald-bright)}
+h1{font-family:var(--disp);font-style:italic;font-variation-settings:"wdth" 80,"wght" 880;text-transform:uppercase;
+  font-size:clamp(64px,20vw,140px);line-height:.85;margin:18px 0 0;letter-spacing:-.01em}
+h2{font-family:var(--disp);font-style:italic;font-variation-settings:"wdth" 84,"wght" 800;text-transform:uppercase;
+  font-size:clamp(24px,5vw,38px);line-height:1;margin:8px 0 0}
+p{color:rgba(255,255,255,.8);font-size:17px;line-height:1.6;margin:20px auto 0;max-width:46ch}
+.actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:34px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:4px;font-weight:700;font-size:15px;text-decoration:none;transition:transform .16s,background .16s}
+.btn--p{background:var(--emerald);color:var(--ink)}
+.btn--p:hover{background:var(--emerald-bright);transform:translateY(-2px)}
+.btn--g{border:1.5px solid rgba(255,255,255,.35);color:#fff}
+.btn--g:hover{background:rgba(255,255,255,.08);transform:translateY(-2px)}
+.btn svg{width:20px;height:20px}
+:focus-visible{outline:3px solid var(--emerald-bright);outline-offset:3px}
+</style>
+</head>
+<body>
+  <div class="box">
+    <span class="tag">Error 404</span>
+    <h1>404</h1>
+    <h2>Página no encontrada</h2>
+    <p>La página que busca no existe o fue movida. Volvamos a lo importante: evaluar su levantamiento.</p>
+    <div class="actions">
+      <a class="btn btn--p" href="/alquiler-grua-arana">Ir al inicio</a>
+      <a class="btn btn--g" id="wa" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z"/></svg>
+        Escribir por WhatsApp
+      </a>
+    </div>
+  </div>
+<script>
+  var msg="Hola, necesito evaluar un trabajo de levantamiento con Crewcrane. La ubicación del proyecto es: ________. La carga que necesito levantar es: ________. Puedo enviar fotografías del sitio y de la carga.";
+  document.getElementById("wa").href="https://wa.me/50687871111?text="+encodeURIComponent(msg);
+</script>
+</body>
+</html>
