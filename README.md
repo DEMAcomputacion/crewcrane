@@ -1,6 +1,6 @@
 # Crewcrane — Landing de alquiler de grúa araña
 
-Sitio estático (HTML/CSS/JS, sin build step) para `https://crewcrane.com/alquiler-grua-arana`.
+Sitio estático (HTML/CSS/JS, sin build step) para `https://crewcrane.com/alquiler-grua`.
 
 ## Previsualizar en local
 
@@ -37,10 +37,22 @@ El formulario de contacto (`#leadForm`) envía por [EmailJS](https://www.emailjs
 
 Mientras esos valores no se reemplacen, el formulario muestra la confirmación visual pero no envía nada (modo de desarrollo/prueba).
 
-## Medición (pendiente)
+## Medición
 
-GTM + GA4 + Google Ads con eventos de WhatsApp, llamada y formulario (evento `generate_lead` ya se dispara al `dataLayer` en el envío exitoso). Ver el plan de medición del paquete de handoff original para el detalle de tags y triggers.
+Google Tag Manager ya está instalado en `index.html` y `404.html` (contenedor `GTM-KQFH3KG3`, snippet en `<head>` y `<noscript>` justo después de `<body>`).
+
+Pendiente, dentro de la consola web de GTM (no requiere tocar el código de este repo):
+- Configurar GA4 (Measurement ID `G-PNNDS468YV`) como *Configuration Tag*.
+- Crear los triggers/tags de Google Ads y GA4 para los eventos de WhatsApp, llamada y formulario. El evento `generate_lead` ya se dispara al `dataLayer` en el envío exitoso del formulario. Ver el plan de medición del paquete de handoff original (`analytics/plan-de-medicion.md`) para el detalle de tags y triggers.
 
 ## Publicación
 
-Sitio 100% estático: subir el contenido de esta carpeta a la raíz del hosting de `crewcrane.com` (o a la ruta `/alquiler-grua-arana` según corresponda) con HTTPS activo. Verificar que `404.html` devuelva estado HTTP 404 real desde el servidor.
+Sitio 100% estático: subir el contenido de esta carpeta a la raíz del hosting de `crewcrane.com` (o a la ruta `/alquiler-grua` según corresponda) con HTTPS activo. Verificar que `404.html` devuelva estado HTTP 404 real desde el servidor.
+
+## Search Console (checklist manual, pendiente)
+
+A ejecutar por quien tenga acceso a la propiedad `crewcrane.com` en Google Search Console, una vez el sitio esté publicado con la URL correcta:
+
+1. Enviar `sitemap.xml` desde la sección **Sitemaps**.
+2. Inspeccionar `https://crewcrane.com/alquiler-grua` en **Inspección de URLs** y confirmar que responde 200 con el contenido esperado.
+3. Solicitar su indexación desde la misma herramienta de inspección.
