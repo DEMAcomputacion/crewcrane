@@ -8,10 +8,15 @@
   // ubicacion, fecha, descripcion, utm_source, utm_medium, utm_campaign,
   // utm_term, utm_content). Reemplazar los 3 valores siguientes con los
   // que EmailJS te asigne (Account > General):
-  var EMAILJS_PUBLIC_KEY="REEMPLAZAR_PUBLIC_KEY";
+  var EMAILJS_PUBLIC_KEY="WEiPUyvOTh4ZWwctA";
   var EMAILJS_SERVICE_ID="REEMPLAZAR_SERVICE_ID";
   var EMAILJS_TEMPLATE_ID="REEMPLAZAR_TEMPLATE_ID";
-  if(window.emailjs&&EMAILJS_PUBLIC_KEY.indexOf("REEMPLAZAR")!==0){
+  // Los 3 valores deben estar reemplazados (ninguno debe empezar con
+  // "REEMPLAZAR") antes de intentar enviar por EmailJS; si falta alguno,
+  // el formulario se queda en modo de confirmación local sin envío real
+  // en vez de intentar una llamada que fallará siempre.
+  var EMAILJS_READY=window.emailjs&&[EMAILJS_PUBLIC_KEY,EMAILJS_SERVICE_ID,EMAILJS_TEMPLATE_ID].every(function(v){return v.indexOf("REEMPLAZAR")!==0;});
+  if(EMAILJS_READY){
     emailjs.init({publicKey:EMAILJS_PUBLIC_KEY});
   }
 
@@ -42,16 +47,10 @@
   }catch(e){}
 
   // form validation + confirmation
-  var form=document.getElementById("leadForm"),ok=document.getElementById("formSuccess");
+  var form=document.getElementById("leadForm"),ok=document.getElementById("formSuccess"),sendErr=document.getElementById("formError");
   function validEmail(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);}
   if(form){form.addEventListener("submit",function(e){
-    e.preventDefault();var bad=false,first=null;
-    Array.prototype.forEach.call(form.querySelectorAll("[required]"),function(f){
-      var invalid=!f.value.trim()||(f.type==="email"&&!validEmail(f.value));
-      f.setAttribute("aria-invalid",invalid?"true":"false");
-      if(invalid){bad=true;if(!first)first=f;}
-    });
-    if(bad){if(first)first.focus();return;}
+    e.preventDefault();
 
     var submitBtn=form.querySelector(".form-submit");
     var finish=function(){
@@ -60,13 +59,28 @@
       if(window.dataLayer)window.dataLayer.push({event:"generate_lead",form_id:"leadForm"});
     };
 
-    if(window.emailjs&&EMAILJS_PUBLIC_KEY.indexOf("REEMPLAZAR")!==0){
+    // honeypot anti-spam: campo oculto que solo un bot llenaría. Si viene
+    // con valor, se muestra la confirmación normal (para no delatar el
+    // filtro) pero no se envía nada realmente.
+    var hp=document.getElementById("website");
+    if(hp&&hp.value.trim()){finish();return;}
+
+    if(sendErr)sendErr.hidden=true;
+    var bad=false,first=null;
+    Array.prototype.forEach.call(form.querySelectorAll("[required]"),function(f){
+      var invalid=!f.value.trim()||(f.type==="email"&&!validEmail(f.value));
+      f.setAttribute("aria-invalid",invalid?"true":"false");
+      if(invalid){bad=true;if(!first)first=f;}
+    });
+    if(bad){if(first)first.focus();return;}
+
+    if(EMAILJS_READY){
       submitBtn.disabled=true;submitBtn.textContent="Enviando…";
       emailjs.sendForm(EMAILJS_SERVICE_ID,EMAILJS_TEMPLATE_ID,form).then(function(){
         finish();
       },function(err){
         submitBtn.disabled=false;submitBtn.textContent="Enviar solicitud de evaluación";
-        alert("No se pudo enviar la solicitud. Por favor intente de nuevo o escríbanos por WhatsApp.");
+        if(sendErr)sendErr.hidden=false;
         if(window.console)console.error("EmailJS error:",err);
       });
     }else{
@@ -94,10 +108,19 @@
   if(reduce){items.forEach(function(el){el.classList.add("in");});}
   else{items.forEach(function(el,i){setTimeout(function(){el.classList.add("in");},90*i);});}
 
-  // ── tabla de cargas interactiva (hero) ──────────────────────────────
-  // Valores reconstruidos a partir de la tabla de cargas real del equipo
-  // (radio/altura ajustados a una elipse que respeta los extremos legibles
-  // de la ficha técnica). Uso ilustrativo/comercial, no operativo.
+  // ── tabla de cargas interactiva ──────────────────────────────────────
+  // Verificado contra la tabla de cargas real del fabricante ("SS8.0 | TABLA
+  // DE CARGAS"): las 5 configuraciones de pluma (E:4.3 m, D:7.5 m, C:10.7 m,
+  // B:13.9 m, A:17.1 m) y el valor de tonelaje (t) de cada punto coinciden
+  // exactamente, punto por punto, con la ficha original.
+  // Los valores de altura (h) SÍ son una aproximación: la ficha del
+  // fabricante no imprime la altura numérica de cada punto, solo puede
+  // inferirse de las líneas de cuadrícula del dibujo, así que aquí se
+  // interpolan sobre una curva suave que respeta los extremos legibles
+  // (radio máximo a nivel de piso y altura máxima cerca de la vertical).
+  // Por eso la página ya no llama "exacta" a esta herramienta: es
+  // referencial/comercial, no sustituye la tabla de carga oficial ni la
+  // evaluación técnica de cada maniobra.
   var LC_CURVES=[
     {id:"E",points:[{r:0.4,h:9.0,t:8},{r:1.9,h:8.1,t:7.5},{r:3.2,h:6.1,t:7},{r:4.0,h:3.3,t:4},{r:4.3,h:0,t:2}]},
     {id:"D",points:[{r:0.7,h:13.0,t:5.5},{r:2.5,h:12.3,t:5},{r:4.1,h:10.9,t:4.5},{r:5.5,h:8.8,t:4},{r:6.6,h:6.2,t:3},{r:7.3,h:3.2,t:2.5},{r:7.5,h:0,t:1.5}]},
