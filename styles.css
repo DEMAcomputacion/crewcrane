@@ -262,7 +262,7 @@ button{font-family:inherit}
 .lc-readout-r,.lc-readout-h{font-family:var(--mono);font-style:normal;font-variation-settings:normal;font-size:12px;letter-spacing:.05em;color:rgba(255,255,255,.7)}
 .lc-readout-sep{color:rgba(255,255,255,.3);font-family:var(--mono);font-size:12px}
 
-.lc-note{margin-top:12px;font-size:12px;line-height:1.5;color:rgba(255,255,255,.5)}
+.lc-note{margin-top:12px;font-size:14px;line-height:1.6;color:rgba(255,255,255,.7)}
 .lc-standalone{max-width:720px;margin:32px auto 0}
 @media(min-width:1040px){
   .hero-grid{grid-template-columns:1.05fr .95fr;align-items:center;gap:48px}
@@ -393,7 +393,7 @@ input[aria-invalid="true"]~.err,textarea[aria-invalid="true"]~.err{display:block
 .hp-field{position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden}
 .form-submit{width:100%;justify-content:center;margin-top:6px}
 .form-error{margin-top:14px;padding:12px 14px;background:#fdf3f2;border:1px solid #c0392b;border-radius:var(--radius);color:#c0392b;font-size:13.5px;text-align:center}
-.form-legal{font-size:12px;color:var(--steel);margin-top:14px;text-align:center}
+.form-legal{font-size:14px;line-height:1.6;color:var(--steel);margin-top:14px;text-align:center}
 .form-success{display:none;text-align:center;padding:26px 12px}
 .form-success.show{display:block}
 .form-success .check{width:64px;height:64px;margin:0 auto 18px;border-radius:50%;background:rgba(23,166,78,.12);display:flex;align-items:center;justify-content:center}

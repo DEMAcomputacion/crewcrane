@@ -9,8 +9,8 @@
   // utm_term, utm_content). Reemplazar los 3 valores siguientes con los
   // que EmailJS te asigne (Account > General):
   var EMAILJS_PUBLIC_KEY="WEiPUyvOTh4ZWwctA";
-  var EMAILJS_SERVICE_ID="REEMPLAZAR_SERVICE_ID";
-  var EMAILJS_TEMPLATE_ID="REEMPLAZAR_TEMPLATE_ID";
+  var EMAILJS_SERVICE_ID="envio_form_crewcrane";
+  var EMAILJS_TEMPLATE_ID="template_d7r38cw";
   // Los 3 valores deben estar reemplazados (ninguno debe empezar con
   // "REEMPLAZAR") antes de intentar enviar por EmailJS; si falta alguno,
   // el formulario se queda en modo de confirmación local sin envío real
