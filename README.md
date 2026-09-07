@@ -1,6 +1,6 @@
 # Crewcrane — Landing de alquiler de grúa araña
 
-Sitio estático (HTML/CSS/JS, sin build step) para `https://crewcrane.com/alquiler-grua`.
+Sitio estático (HTML/CSS/JS, sin build step) para `https://crewcrane.com/`.
 
 ## Previsualizar en local
 
@@ -47,12 +47,12 @@ Pendiente, dentro de la consola web de GTM (no requiere tocar el código de este
 
 ## Publicación
 
-Sitio 100% estático: subir el contenido de esta carpeta a la raíz del hosting de `crewcrane.com` (o a la ruta `/alquiler-grua` según corresponda) con HTTPS activo. Verificar que `404.html` devuelva estado HTTP 404 real desde el servidor.
+Sitio 100% estático servido por nginx en la raíz de `crewcrane.com` (VPS en Hostinger, `/var/www/crewcrane.com/`). El vhost también atiende `api.`, `evolution.` y otros subdominios de proyectos aparte; no tocar esos `location` al editar el de `crewcrane.com`. La ruta antigua `/alquiler-grua` redirige (301) a la raíz. Verificar que `404.html` devuelva estado HTTP 404 real desde el servidor.
 
 ## Search Console (checklist manual, pendiente)
 
 A ejecutar por quien tenga acceso a la propiedad `crewcrane.com` en Google Search Console, una vez el sitio esté publicado con la URL correcta:
 
 1. Enviar `sitemap.xml` desde la sección **Sitemaps**.
-2. Inspeccionar `https://crewcrane.com/alquiler-grua` en **Inspección de URLs** y confirmar que responde 200 con el contenido esperado.
+2. Inspeccionar `https://crewcrane.com/` en **Inspección de URLs** y confirmar que responde 200 con el contenido esperado.
 3. Solicitar su indexación desde la misma herramienta de inspección.
